@@ -213,9 +213,9 @@ view : Address Action -> Model -> Html
 | Elm    | MVC        |
 |--------+------------|
 | Model  | Model      |
-| Action | -          |
 | View   | View       |
 | Update | Controller |
+| Action | -          |
 
 ** Huge Structural Difference
 
