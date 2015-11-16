@@ -14,7 +14,7 @@ type alias Model =
   {counter : Int}
 
 type Action
-  = Increment
+  = Increment Int
 
 ------------------------------------------------------------
 
@@ -27,14 +27,14 @@ view address model =
              ,("font-size", "20px")]]
       [h1 []
           [text ("Incredible Demo: " ++ toString model.counter)]
-      ,button [onClick address Increment]
+      ,button [onClick address (Increment 1)]
               [text "Increment"]]
 
 update : Action -> Model -> (Model, Effects Action)
 update action model =
   case action of
-    Increment -> ({model | counter <- model.counter + 1}
-                 ,none)
+    Increment n -> ({model | counter <- model.counter + n}
+                    ,none)
 
 ------------------------------------------------------------
 
